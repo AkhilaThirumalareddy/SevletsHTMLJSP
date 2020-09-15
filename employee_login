@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="lightblue">
+<br><br><br><br>
+<center><h1>Employee LOGIN PAGE</h1>
+<br><br><br>
+<form action="./employee_login" method="post">
+<input type="text" name="username" placeholder="Enter name ">
+	<input type="password" name ="password" placeholder="Enter password">
+	
+
+
+<input type="submit" value="Login">
+
+</form>
+</center>
+</body>
+</html>
