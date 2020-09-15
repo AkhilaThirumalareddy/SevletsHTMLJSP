@@ -1,0 +1,48 @@
+<html>
+
+<body bgcolor="lightblue">
+<center>
+<h1>WELCOME TO THE Manager HOME</h1>
+<a href="manager_home.html">Home</a>
+<a href="manager_profile.jsp">Profile</a>
+<a href="leave_details.jsp">LeaveDetails</a>
+<a href="index.html">Logout</a>
+</center>
+ <table border='2' align='center' cellpadding="30" width="60%" height="300">
+ <tr><td>Id</td><td>Name</td><td>Days</td><td>department</td><td>Status</td><td>ManagerName</td><td>Action</td></tr>
+<%@ page import="java.sql.*"%>
+<%
+Connection con = null;
+	PreparedStatement ps=null;
+	Class.forName("com.mysql.jdbc.Driver");
+	String url="jdbc:mysql://localhost:3306/jnit";
+	String user="root";
+	String pass ="rootroot";
+	con= DriverManager.getConnection("jdbc:mysql://localhost/jnit?user=root&password=rootroot&serverTimezone=UTC");
+	String managerN=(String)session.getAttribute("name");
+	ps=con.prepareStatement("select * from leaves where managername=?");
+	ps.setString(1,managerN);
+	ResultSet rs=ps.executeQuery();
+	while(rs.next()){
+	
+	%>
+	<tr><td><%=rs.getInt(1)%></td><td><%=rs.getString(2)%></td>
+	<td><%=rs.getString(3)%></td><td><%=rs.getString(4)%></td>
+	<td><%=rs.getString(5)%></td><td><%=rs.getString(7)%></td>
+
+ <%if(rs.getString("status").equals("pending")) {%>
+ 
+ <td><a href="./accept.jsp?Id=<%=rs.getInt(1)%>">Accept</a>
+ 
+ <%}else{ %>
+ <td>Done</td>
+ <%} %>
+ 
+ </tr>
+ 
+ <%
+ }
+ %>
+ </table>
+</body>
+</html>
