@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<body bgcolor="lightblue">
+<center>
+<h1>WELCOME TO THE Manager HOME</h1>
+<a href="Manager_home.html">Home</a>
+<a href="manager_profile.jsp">Profile</a>
+<a href="leave_details.jsp">LeaveDetails</a>
+<a href="index.html">Logout</a>
+</center>
+</body>
+</html>
