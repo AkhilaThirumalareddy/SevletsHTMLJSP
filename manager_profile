@@ -1,0 +1,38 @@
+s<%@ page import="java.sql.*"%>
+<html>
+<body bgcolor="lightblue">
+<center>
+<h1>WELCOME TO THE Manager PROFILE</h1>
+<a href="manager_home.html">Home</a>
+<a href="manager_profile.jsp">Profile</a>
+<br><br><br>
+
+</center>
+<table border='2' align='center' cellpadding="30" width="60%" height="300">
+<tr><td>ID</td><td>Name</td><td>Email</td><td>Phone</td><td>department</td>
+<%
+Connection con = null;
+	PreparedStatement ps=null;
+	Class.forName("com.mysql.jdbc.Driver");
+	String url="jdbc:mysql://localhost:3306/jnit";
+	String user="root";
+	String pass ="rootroot";
+	con= DriverManager.getConnection("jdbc:mysql://localhost/jnit?user=root&password=rootroot&serverTimezone=UTC");
+	String username=request.getParameter("username");
+		String password=request.getParameter("password");
+	
+			ps= con.prepareStatement("select * from manager where name=?");
+		Object o=session.getAttribute("name");
+		String name=(String)o;	
+		ps.setString(1,name);
+			ResultSet rs= ps.executeQuery();
+			System.out.println(rs);
+			while(rs.next()){
+			%>
+			<tr>
+			<td><%=rs.getInt(1) %></td>
+			<td><%=rs.getString(2) %></td>
+			<td><%=rs.getString(4) %></td>
+			<td><%=rs.getString(5) %></td>
+			<td><%=rs.getString(6) %></td>
+			</tr>
