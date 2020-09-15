@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<body bgcolor="lightblue">
+<center>
+<h1>WELCOME TO THE Employee HOME</h1>
+<a href="employee_home.html">Home</a>
+<a href="leaves.html">RequestLeave</a>
+<a href="leavestatus.jsp">LeaveStatus</a>
+<a href="index.html">Logout</a>
+</center>
+</body>
+</html>
