@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="lightblue">
+<br><br><br><br>
+<center><h1>Employee REGISTRATION PAGE</h1>
+<br><br><br>
+<form action="./employee_register" method="get">
+<input type="text" name="name" placeholder="Enter name ">
+	<input type="password" name ="password" placeholder="Enter password">
+	<input type="email" name="email" placeholder="Enter email">
+	<input type="number" name="phone" placeholder="Enter phone number">
+	<select name="department">
+		<option value="Dev">DEV</option>
+		<option value="Testing">Testing</option>
+		<option value="Analyst">Analyst</option>
+	</select>
+<input type="submit" value="Register">
+
+</form>
+</center>
+</body>
+</html>
